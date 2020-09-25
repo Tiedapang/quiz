@@ -5,7 +5,6 @@ class ShowPage extends Component{
             super();
             this.state = {
                 product:[],
-                elements:[]
             }
           }
          
@@ -14,25 +13,21 @@ class ShowPage extends Component{
             this.setState({
                 product:pro
             });
-            let elements = [];
-            for(var i in this.state.product){
-                
-                elements.push(
-                    <div>
-                        <img src='{i.imagePath}'></img>
-                        <p>{i.name}</p>
-                        <p>单价：{i.price}/{i.unit}</p>
-                    </div>
-                )
-            }
-            this.setState({
-                elements:elements
-            });
           }
           render(){
+            const elements=[];
+            this.state.product.forEach((item)=>{
+              elements.push(
+                <div>
+                  <img></img>
+                  <p>{item.name}</p>
+                  <p>单位：{item.price}/{item.unit}</p>
+                </div>
+              )
+            });
               return(
                 <div>
-                    {this.state.elements.forEach(item => item)}
+                   {elements}
                   
               </div>
  
@@ -40,3 +35,4 @@ class ShowPage extends Component{
 
           }
 }
+export default ShowPage;
