@@ -32,9 +32,9 @@ public class ProductController {
     List<Product> products = productService.findAll().stream().map(
             item ->
                     Product.builder().name(item.getName())
-                            .count(item.getCount())
                             .price(item.getPrice())
                             .unit(item.getUnit())
+                            .imgUrl(item.getImgUrl())
                             .build()
     ).collect(Collectors.toList());
    return products;
@@ -47,10 +47,10 @@ public class ProductController {
   @PostMapping("/product/event")
   public boolean addProduct(@RequestBody @Valid Product  product) throws JsonProcessingException {
     ProductPO productPoNew = new ProductPO();
-    productPoNew.setCount(product.getCount());
     productPoNew.setName(product.getName());
     productPoNew.setPrice(product.getPrice());
     productPoNew.setUnit(product.getUnit());
+    productPoNew.setImgUrl(product.getImgUrl());
     return productService.addProduct(productPoNew);
 
   }

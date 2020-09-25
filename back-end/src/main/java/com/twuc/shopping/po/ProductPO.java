@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "productPO")
+@Table(name = "product")
 @Data
 @Builder
 @NoArgsConstructor
@@ -15,7 +15,9 @@ public class ProductPO {
   @Id @GeneratedValue private int id;
   private String name;
   private int price;
-  private int count;
   private String unit;
+  private String imgUrl;
+  @OneToOne
+  private OrderPO orderPO;
 
 }

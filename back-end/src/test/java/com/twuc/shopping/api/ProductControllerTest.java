@@ -39,7 +39,6 @@ class ProductControllerTest {
     public void shouldAddProduct() throws Exception {
         Product product = Product.builder()
                 .name("可乐")
-                .count(1)
                 .price(5)
                 .unit("瓶")
                 .build();
@@ -64,7 +63,6 @@ class ProductControllerTest {
     public void shouldGetProducts() throws Exception {
         ProductPO productPo = ProductPO.builder()
                 .name("可乐")
-                .count(1)
                 .price(5)
                 .unit("瓶")
                 .build();
