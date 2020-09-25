@@ -4,7 +4,8 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.css'
 import {BrowserRouter,Route,Link} from 'react-router-dom';
 import ShowPage from './compontens/ShowPage';
-import OrderList from './compontens/OrderList'
+import OrderList from './compontens/OrderList';
+import Product from './compontens/Product';
 function App() {
   return (
     <BrowserRouter>
@@ -20,7 +21,7 @@ function App() {
                 </li>
 
                 <li>
-                    <Link to={"/"}>添加商品</Link>
+                    <Link to={"/Product"}>添加商品</Link>
                 </li>
 
             </ul>

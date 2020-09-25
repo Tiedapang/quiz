@@ -13,7 +13,7 @@ class OrderList extends Component{
             orders:orders
         });
       }
-      deleteOrders(id){
+      async deleteOrders(id){
         await fetch(`http://localhost:8080/order/event`);//主要是从后台拿json数据
       }
     render(){
