@@ -10,10 +10,17 @@ export default class AddProductPage extends Component {
     };
     onSubmit = async (event) => {
         event.preventDefault();
-        await Api.post("/product/event", {
-            price: Math.round(this.state.price * 100),
-            ...this.state,
-        });
+        let isProNameExist = await (await Api.get(`/product?${this.state.name}`)).json()
+        isProNameExist = false
+        if (isProNameExist){
+            alert("商品名称已存在，请输入新的商品名称")
+        } else {
+            await Api.post("/product", {
+                price: Math.round(this.state.price * 100),
+                ...this.state,
+            });
+        }
+
     };
     disableButton = !(this.state.name && this.state.price && this.state.unit && this.state.imgUrl);
     onFormChange = (event) => {

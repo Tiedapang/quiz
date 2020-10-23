@@ -7,6 +7,7 @@ import com.twuc.shopping.domain.Product;
 import com.twuc.shopping.po.ProductPO;
 import com.twuc.shopping.repository.ProductRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 import java.util.Optional;
@@ -41,5 +42,13 @@ public class ProductService {
 
     public ProductPO getProductById(int product_id) {
     return productRepository.findById(product_id).get();
+    }
+
+    public boolean checkProductName(String productName) {
+    Optional<ProductPO> productPO = productRepository.findByName(productName);
+    if(productPO.equals(null)){
+      return false;
+    }
+    return true;
     }
 }

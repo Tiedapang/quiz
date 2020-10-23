@@ -15,6 +15,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import com.twuc.shopping.domain.Product;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
 
@@ -53,6 +54,10 @@ public class ProductController {
     productPoNew.setImgUrl(product.getImgUrl());
     return productService.addProduct(productPoNew);
 
+  }
+  @GetMapping("/product?name={name}")
+  public boolean checkProductName(@PathVariable String name){
+    return productService.checkProductName(name);
   }
   
 }

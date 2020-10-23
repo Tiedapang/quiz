@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 class ShowPage extends Component{
     
         constructor() {
@@ -22,6 +23,7 @@ class ShowPage extends Component{
                   <img></img>
                   <p>{item.name}</p>
                   <p>单位：{item.price}/{item.unit}</p>
+                    <button>+</button>
                 </div>
               )
             });
