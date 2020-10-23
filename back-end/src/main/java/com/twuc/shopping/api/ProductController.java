@@ -40,11 +40,11 @@ public class ProductController {
    return products;
   }
 
-  @DeleteMapping("/product/event")
+  @DeleteMapping("/product")
   public void deleteProduct(@RequestBody String  deleteID) throws JsonProcessingException {
     productService.deleteById(Integer.parseInt(deleteID));
   }
-  @PostMapping("/product/event")
+  @PostMapping("/product")
   public boolean addProduct(@RequestBody @Valid Product  product) throws JsonProcessingException {
     ProductPO productPoNew = new ProductPO();
     productPoNew.setName(product.getName());

@@ -1,4 +1,4 @@
-package com.thoughtworks.rslist.exception;
+package com.twuc.shopping.exception;
 
 import lombok.Data;
 

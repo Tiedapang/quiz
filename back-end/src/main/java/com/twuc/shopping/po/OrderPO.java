@@ -1,5 +1,6 @@
 package com.twuc.shopping.po;
 
+import com.twuc.shopping.domain.Product;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -9,17 +10,16 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "order")
 @Data
 @Builder
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
+@Table(name = "orderPo")
 public class OrderPO {
     @Id
     @GeneratedValue
     private int id;
     private int count;
-    @OneToOne(cascade = CascadeType.REMOVE, mappedBy = "order")
-    private ProductPO product;
+    private int productId;
 
 }

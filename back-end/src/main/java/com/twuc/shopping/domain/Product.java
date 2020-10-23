@@ -14,6 +14,7 @@ import java.io.Serializable;
 @Builder
 @Data
 public class Product implements Serializable {
+  @NotNull private int id;
   @NotNull private String name;
   @Min(0)
   @NotNull private int price;

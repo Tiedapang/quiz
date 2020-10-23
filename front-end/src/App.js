@@ -1,38 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component }from 'react';
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css'
-import {BrowserRouter,Route,Link} from 'react-router-dom';
 import ShowPage from './compontens/ShowPage';
 import OrderList from './compontens/OrderList';
-import Product from './compontens/Product';
-function App() {
-  return (
-    <BrowserRouter>
-    <div>
-      <nav class="navbar navbar-inverse">
-      <div class="container">
-      <ul>
-                <li>
-                    <Link to={"/"}>商城</Link>
-                </li>
-                <li>
-                    <Link to={"/order"}>订单</Link>
-                </li>
-
-                <li>
-                    <Link to={"/Product"}>添加商品</Link>
-                </li>
-
-            </ul>
-    </div>
-    <Route exac path='/' component={ShowPage}></Route>
-    <Route  path='/order' component={OrderList}></Route>
- 
-    </nav>
-    </div>
-    </BrowserRouter>
-  );
+import Header from './compontens/Header';
+import AddProductPage from "./compontens/AddProductPage";
+import Footer from "./compontens/Footer";
+export default class App extends Component {
+    render = () => (
+        <div className="App">
+            <BrowserRouter>
+                <Header />
+                <Switch>
+                    <Route path="/mall">
+                        <ShowPage/>
+                    </Route>
+                    <Route path="/order">
+                        <OrderList/>
+                    </Route>
+                    <Route path="/add">
+                        <AddProductPage/>
+                    </Route>
+                    <Redirect to="/mall" />
+                </Switch>
+                <Footer/>
+            </BrowserRouter>
+        </div>
+    );
 }
-
-export default App;

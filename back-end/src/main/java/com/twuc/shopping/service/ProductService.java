@@ -2,6 +2,8 @@ package com.twuc.shopping.service;
 
 
 
+import com.twuc.shopping.api.ProductController;
+import com.twuc.shopping.domain.Product;
 import com.twuc.shopping.po.ProductPO;
 import com.twuc.shopping.repository.ProductRepository;
 import org.springframework.stereotype.Service;
@@ -35,5 +37,9 @@ public class ProductService {
         return true;
       }
 
+    }
+
+    public ProductPO getProductById(int product_id) {
+    return productRepository.findById(product_id).get();
     }
 }

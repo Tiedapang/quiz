@@ -1,4 +1,5 @@
-package com.thoughtworks.rslist.exception;
+package com.twuc.shopping.exception;
+
 
 public class RequestNotValidException extends RuntimeException {
   private String error;
