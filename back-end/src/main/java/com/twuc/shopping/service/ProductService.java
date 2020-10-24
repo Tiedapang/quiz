@@ -46,7 +46,7 @@ public class ProductService {
 
     public boolean checkProductName(String productName) {
     Optional<ProductPO> productPO = productRepository.findByName(productName);
-    if(productPO.equals(null)){
+    if(productPO.equals(Optional.empty())){
       return false;
     }
     return true;

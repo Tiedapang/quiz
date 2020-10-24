@@ -17,7 +17,7 @@ public class Product implements Serializable {
   @NotNull private int id;
   @NotNull private String name;
   @Min(0)
-  @NotNull private int price;
+  @NotNull private double price;
   @NotNull private String unit;
   private String imgUrl;
 }

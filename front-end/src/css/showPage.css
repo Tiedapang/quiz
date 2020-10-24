@@ -49,15 +49,31 @@
 .table-item table{
     width: 300px;
 }
-.table-item table th{
-font-width: bold;
+.table-hidden{
+    display: none;
 }
-.table-item table th td{
-    padding-right: 30px;
+.opera-button{
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #ECEDF1;
+    background-color: white;
 }
-.table-item table tr{
-margin-top: 5px;
+.operaBtns{
+    float: right;
+    margin-right: 20px;
 }
-.table-item table tr td{
-    padding-right: 30px;
+.ordered{
+    background-color: #2493FD;
+    border: none;
+    color: white;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+.canceled{
+    background-color: #6D757C;
+    border: none;
+    color: white;
+    margin-right: 10px;
+    border-radius: 5px;
 }

@@ -55,7 +55,7 @@ public class ProductController {
     return productService.addProduct(productPoNew);
 
   }
-  @GetMapping("/product?name={name}")
+  @GetMapping("/product/{name}")
   public boolean checkProductName(@PathVariable String name){
     return productService.checkProductName(name);
   }

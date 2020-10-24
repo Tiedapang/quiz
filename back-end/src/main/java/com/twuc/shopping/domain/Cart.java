@@ -9,10 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 @Data
-public class Order {
-    private String productName;
-    private double price;
+public class Cart {
+    private String name;
     private int count;
-    private String unit;
-
 }
