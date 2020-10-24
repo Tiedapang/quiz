@@ -2,7 +2,12 @@ export default class Api {
   static baseUrl = "http://localhost:8080";
 
   static get(path) {
-    return fetch(`${Api.baseUrl}${path}`);
+    return fetch(`${Api.baseUrl}${path}`,{
+      headers: {
+        "content-type": "application/json",
+        "content" : "text/html; charset=UTF-8"
+      },
+    });
   }
 
   static post(path, data) {

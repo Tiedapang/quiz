@@ -10,15 +10,15 @@ export default class AddProductPage extends Component {
     };
     onSubmit = async (event) => {
         event.preventDefault();
-        let isProNameExist = await (await Api.get(`/product?${this.state.name}`)).json()
-        isProNameExist = false
+        const isProNameExist = await (await Api.get(`/product/${this.state.name}`)).json()
         if (isProNameExist){
             alert("商品名称已存在，请输入新的商品名称")
         } else {
             await Api.post("/product", {
-                price: Math.round(this.state.price * 100),
                 ...this.state,
-            });
+            }).then(
+                alert('添加商品成功！')
+            );
         }
 
     };
@@ -62,9 +62,6 @@ export default class AddProductPage extends Component {
                             placeholder="价格"
                             name="price"
                             id="price"
-                            min="0.00"
-                            step="0.01"
-                            value={this.state.price}
                             onChange={this.onFormChange}
                         />
                     </div>
